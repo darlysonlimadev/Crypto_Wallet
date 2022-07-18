@@ -1,0 +1,36 @@
+<div class="ui inverted menu">
+<a href="/home/index" class="item">Home</a>
+
+<a href="/moedas" class="item"> Moedas </a>
+
+<a href="/moedas/new" class="item">Cadastrar Moedas</a>
+
+<a href="/tipo_mineracaos" class="item">Minerações</a>
+
+<a href="/tipo_mineracaos/new" class="item">Cadastrar Mineracao</a>
+
+<a href="#" class="active red item">Visualizando Mineração</a>
+</div>
+
+
+<p id="notice"><%= notice %></p>
+
+<table class="ui red table">
+<thead>
+  <tr><th>Nome</th>
+  <th> <%= @tipo_mineracao.nome %> </th>
+</tr></thead><tbody>
+<tr>
+  <td>Sigla</td>
+  <td><%= @tipo_mineracao.sigla %></td>
+</tr>
+  
+</tbody>
+</table>
+
+<%= link_to 'Editar', edit_tipo_mineracao_path(@tipo_mineracao), class:"ui secondary button" %> 
+<%= link_to 'Voltar', tipo_mineracaos_path, class:"ui secondary button" %>
+
+
+
+

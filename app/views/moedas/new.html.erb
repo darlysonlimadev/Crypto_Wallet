@@ -1,0 +1,17 @@
+<div class="ui inverted menu">
+<a href="/home/index" class="item">Home</a>
+
+<a href="/moedas" class="item"> Moedas </a>
+
+<a href="/moedas/new" class="active red item">Cadastrar Moedas</a>
+
+<a href="/tipo_mineracaos" class="item">Minerações</a>
+
+<a href="/tipo_mineracaos/new" class="item">Cadastrar Mineracao</a>
+</div>
+
+<h1><center>Nova Moeda</center></h1>
+
+<center><%= render 'form', moeda: @moeda %></center>
+
+<center><%= link_to 'Voltar', moedas_path, class:"ui secondary button" %></center>

@@ -1,0 +1,42 @@
+
+<p id="notice"><%= notice %></p>
+
+<div class="ui inverted menu">
+<a href="/home/index" class="item">Home</a>
+
+<a href="/moedas" class="item"> Moedas </a>
+
+<a href="/moedas/new" class="item">Cadastrar Moedas</a>
+
+<a href="/tipo_mineracaos" class="item">Minerações</a>
+
+<a href="/tipo_mineracaos/new" class="item">Cadastrar Mineracao</a>
+
+<a href="#" class="active red item">Visualizando Moeda</a>
+</div>
+
+<table class="ui red table">
+<thead>
+  <tr><th>Nome</th>
+  <th> <%= @moeda.nome %> </th>
+</tr></thead><tbody>
+<tr>
+  <td>Sigla</td>
+  <td><%= @moeda.sigla %></td>
+</tr>
+  <tr>
+    <td>Imagem</td>
+    <td><%= image_tag @moeda.imagem, size: "25x25" %></td>
+  </tr>
+</tbody>
+</table>
+
+<%= link_to 'Editar', edit_moeda_path(@moeda), class:"ui secondary button" %> 
+<%= link_to 'Voltar', moedas_path, class:"ui secondary button" %>
+
+
+
+
+
+
+

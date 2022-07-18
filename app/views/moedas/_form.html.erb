@@ -1,0 +1,60 @@
+<%= form_with(model: moeda, local: true) do |form| %>
+  <% if moeda.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(moeda.errors.count, "error") %> prohibited this moeda from being saved:</h2>
+
+      <ul>
+      <% moeda.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <p>Nome</p>
+  <div class="ui input focus">
+    <%= form.text_field :nome %>
+  </div>
+  <br></br>
+
+  <p>Sigla</p>
+  <div class="ui input focus">
+    <%= form.text_field :sigla %>
+  </div>
+  <br></br>
+
+  <p>Url Imagem</p>
+  <div class="ui input focus">
+    <%= form.text_field :imagem %>
+  </div>
+  <br></br>
+
+  <p>Tipos de Mineração</p>
+  <div class="ui input focus">
+  <%= form.select("tipo_mineracao_id", @set_tipos_mineracao, {include_blank: "Selecione..."}) %>
+  </div>
+
+  <br></br>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+  <br></br>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

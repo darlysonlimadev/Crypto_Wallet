@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Moedas</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'scaffolds', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag params[:controller], 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    
+    <% if current_user %>
+      <%= current_user.email %>
+      <%= link_to session_path("current"), method: "delete", class:"ui button" do %>
+        <i class="power off icon"></i> Sair
+      <% end %>
+
+    <% else %>
+      <%= link_to new_user_path, class:"ui button" do %> 
+        <i class="pencil alternate icon"></i> Cadastre-se
+      <% end %>
+
+      <%= link_to new_session_path, class:"ui button" do %>
+        <i class="user icon"></i> Entrar
+      <% end %>
+
+    <% end %>
+    <div class="ui segment">
+      <h1 class="cabecalho-locadora"> <center> Cryptor Wallet </center> </h1>
+    </div>  
+
+    <%= yield %>
+    
+  </body>
+</html>

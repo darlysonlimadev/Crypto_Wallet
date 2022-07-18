@@ -1,0 +1,34 @@
+<h2><%= notice %></h2>
+
+<div class="ui inverted menu">
+<a href="/home/index" class="active red item">Home</a>
+
+<a href="/moedas" class="item"> Moedas </a>
+
+<a href="/moedas/new" class="item">Cadastrar Moedas</a>
+
+<a href="/tipo_mineracaos" class="item">Minerações</a>
+
+<a href="/tipo_mineracaos/new" class="item">Cadastrar Mineracao</a>
+</div>
+
+
+<div class="ui segment">
+
+<h1><center>Seja Bem-Vindo!</center></h1>
+
+<%= render "menu" %>
+
+<p> Você está no ambiente de <%= ambiente_rails %> </p>
+
+<p> A criptomoeda refere-se a qualquer forma de moeda que existe digital ou virtualmente e usa criptografia para garantir a realização de transações. As criptomoedas não têm uma autoridade central de emissão ou regulação. </p>
+
+<p><strong><%= link_to "Cadastro de Moedas", moedas_path, class:"ui secondary button" %></strong></p>
+
+<p><strong><%= link_to "Cadastro Mineração", tipo_mineracaos_path, class:"ui secondary button" %></strong></p>
+
+</div>
+
+
+
+

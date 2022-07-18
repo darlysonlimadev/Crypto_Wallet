@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<div class="ui inverted menu">
+<a href="/home/index" class="item">Home</a>
+
+<a href="/moedas" class="active red item"> Moedas </a>
+
+<a href="/moedas/new" class="item">Cadastrar Moedas</a>
+
+<a href="/tipo_mineracaos" class="item">Minerações</a>
+
+<a href="/tipo_mineracaos/new" class="item">Cadastrar Mineracao</a>
+</div>
+
+<h1>Moedas</h1>
+
+<table class="ui red table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Sigla</th>
+      <th>Imagem</th>
+      <th></th>
+      <th>Ações</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @moedas.each do |moeda| %>
+      <tr>
+        <td><%= moeda.nome %></td>
+        <td><%= moeda.sigla %></td>
+        <td><%= image_tag moeda.imagem, size: "25x25" %></td>
+        <td><%= link_to 'Visualizar', moeda, class:"mini ui secondary button" %></td>
+        <td><%= link_to 'Editar', edit_moeda_path(moeda), class:"mini ui secondary button" %></td>
+        <td><%= link_to 'Deletar', moeda, method: :delete, data: { confirm: 'Tem certeza?' }, class:"mini ui red button" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nova Moeda', new_moeda_path, class:"ui secondary button" %>
+
+<center><%= will_paginate @moedas, class:"ui inverted red button"%></center>
+
+
+
